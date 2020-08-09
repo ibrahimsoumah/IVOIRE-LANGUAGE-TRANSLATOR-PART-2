@@ -58,7 +58,7 @@
               }
             ?> 
           </select>
-        
+        <br><br>
         <input type="submit" value="Traduire" name="Traduire" class="btn btn-warning">
           </form>
         </div>
