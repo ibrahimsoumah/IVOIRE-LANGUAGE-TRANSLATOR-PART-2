@@ -1,5 +1,5 @@
-<?php session_start(); include('connection.php'); ?>
-
+<?php session_start(); ?>
+<?php include('connection.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +11,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/7cb0e7c261.js" crossorigin="anonymous"></script>
+        
 </head>
-<body class="">
+<body class='color'>
 
-<div class="container center-div">
+<div class="container center-div" id="color">
 	  
       <div class="container row d-flex flex-row justify-content-center mb-8">
 	    <div class="admin-form shadow p-4">
@@ -23,7 +24,7 @@
     </style>
     <header>
         <center> <h3 class="text-success"><a href="userspage.php"> IVOIRE LANGUAGE TRANSLATOR </a></h3>
-        <a href="#"><img src="logo.PNG" alt="logo" height="160" width="160"></a>
+        <a href="#"><img src="logo.png" alt="logo" height="160" width="160"></a>
         </center>
     </header>
     <main class="">
@@ -58,7 +59,7 @@
               }
             ?> 
           </select>
-        <br><br>
+        
         <input type="submit" value="Traduire" name="Traduire" class="btn btn-warning">
           </form>
         </div>
@@ -70,7 +71,7 @@
 
     <div class="form-group">
 
-    <?php
+    <?php 
     
     if (isset($_POST['Traduire'])) {
 
@@ -78,75 +79,60 @@
         $langue_start = $_POST['langue_start'];
         $langue_end = $_POST['langue_end'];
         $ip = $_SERVER['REMOTE_ADDR'];
-        $date = date("Y-m-d h:i:s");
-        $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-        if (mysqli_query($con, $sql)) {
+        $date = date("Y-m-d h:i:s");
+        // $sql = "INSERT INTO recherche (search_text, langue_start, langue_end, ip, date_enrg) 
+        // VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+    
+       
 
           $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
             $result = mysqli_query($con, $query);
-
-            while($row = mysqli_fetch_array($result)) { ?>
-
+            //var_dump($result);
+            $rowcount=mysqli_num_rows($result);
+            $row = mysqli_fetch_array($result);
+            //var_dump($row);
+            //var_dump($rowcount);
+              if($rowcount > 0) {
+              ?>
               <div class="container center-div">
-              
               <div class="container row d-flex flex-row justify-content-center mb-8">
               <div class="admin-form shadow p-4">
               <table class="table table-bordered">
+                <br><br><br><br><br><br><br><br><br><br>
               <tr>
               <td> <?php echo $row['texte2']?> </td>
+              <br>
               <td>
                 <audio controls>
                   <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
                 </audio>
               </td>
               </tr>
-              </table>
-              <p class="text-sm"><a href="addtextusers.php">Soumettre une traduction ?</a></p>
+              </table><br>
+              <p class="text-sm"><a href="suggestion.php">Soumettre une traduction ?</a></p>
+              <br><br><br>
               </div>
               </div>
               </div>
-              <?php } ?>
+              <?php  }else{
+                echo "<p class='text-sm'><a href='suggestion.php'>Soumettre une traduction ?</a></p>";
+              }
+               ?>
 
               <?php    
           }
-    }else{
+    else{
       echo '';
     }
     
     
-    if  (mysqli_query($con, $query)) { 
-
-      $a = " SELECT * FROM graph WHERE search = '$search_text' "; 
-      $b = mysqli_query($con, $a);
-      $r = " DELETE FROM graph WHERE search = '$search_text' " ;
-      $g = "INSERT INTO graph (count, search)
-              SELECT COUNT(id), search_text
-              FROM recherches
-              WHERE search_text = '$search_text'
-              GROUP BY search_text
-              ORDER BY COUNT(id) ";
-
-      if (mysqli_num_rows($b) != 0 ) {
-
-      mysqli_query($con, $r);
-      mysqli_query($con, $g);
-
-      } elseif (mysqli_num_rows($b) == 0 ) {
-
-      $result_count = mysqli_query($con,$g);
-
-      }
-
-    }
     ?>
 
 </div>
   </div>
   </div>
-<footer class="bg-dark text-white text-center">
-        <p> Copyright &copy; ILT </p>
-    </footer>
+
 
 </div>
 </div>
