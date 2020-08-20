@@ -18,6 +18,10 @@ if ($page === 'public') {
     <link rel="stylesheet" type="text/css" href="../public/style/acceuil.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <script src="https://kit.fontawesome.com/7cb0e7c261.js" crossorigin="anonymous"></script>
+
+
+
 </head>
 
 <body>
@@ -117,14 +121,22 @@ if ($page === 'public') {
     </div>
     <br>
     <br>
-    <div style="text-align:center;">
+    <div style="text-align:center;margin-bottom:20px;">
         <p>
             <h2 style="border-bottom: #6c6c6c; border-radius:10px;"> CARACTÉRISTIQUES PRINCIPALES</h2>
 
         </p>
     </div>
+    <!-- ligne pour delimiter  juste un test-->
+    <hr>
 
-
+    <!-- bloc vert premier traducteur -->
+    <div class="blocvert " style="text-align:center;">
+        <span class="dot" style="color: white;" style="margin-bottom: 15px;"><i class=" fas fa-4x fa-star stars" aria-hidden="true"></i></span>
+        <p class="textblocvert" style="margin-bottom: 35px;margin-top:30px">Premier traducteur de langues locales en côte d'ivoire <br> Construit pour vous facilter la vie .</p>
+        <p class="textblocvert2" style="margin-bottom: 15px;">Vous trouvez qu'il ya un texte mal traduit ? Vous avez des idées pour nous aider à nous ameliorer ? Alors <br> n'hesitez pas envoyer nous un message nous vous répondrons dans les plus brefs délais</p>
+        <a href="commentaire.php"><button class="bouttonBlocVert"> Envoyez un message </button></a>
+    </div>
     <!-- Visites: $ visites ; -->
 
 

@@ -141,3 +141,65 @@ margin-top: 20px;
 padding: 6px;
 } /**/
 
+
+
+  /* style bloc vert  */
+
+        .blocvert {
+            background-color: #3e844a;
+            margin-top: 30px;
+            text-align: center;
+            height: auto;
+            width: auto;
+            margin: 0px;
+            padding: 40px;
+
+        }
+
+        .dot {
+
+            height: 150px;
+            width: 150px;
+            background-color: #3e844a;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: auto;
+            border-style: solid;
+            border-width: 5px;
+            border-color: #EC904A;
+
+        }
+
+        .stars {
+            margin-left: auto;
+            margin-top: 40px;
+        }
+
+       .textblocvert {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #e7f2ec;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        .textblocvert2 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #fdecec;
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+       .bouttonBlocVert{
+            border-style: solid 1px;
+            border-color: white;
+            background-color: #ff914d;
+            height: 50px;
+            width: 350px;
+            border-radius: 7px;
+            color: white;
+            font-size: 25px;
+            margin-top: 50px;
+        }
+
