@@ -50,7 +50,7 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
 
                 <!-- logo ITL -->
                 <div class="itllogo">
-                    <a href="../public/acceuil.php">
+                    <a href="../public/index.php">
                         <img src="../public/assets/LogoIvoireLanguagesTranslator.png" height="230px" width="260px" title="LOGO IVOIRE LANGUAGE TRANSLATOR" alt="LOGO IVOIRE LANGUAGE TRANSLATOR">
                     </a>
                 </div>
@@ -65,7 +65,7 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
 
                 <!-- redirige vers la page dinsciption page dacceuil -->
                 <p class="inscription">
-                    <a href="../public/acceuil.php">RETOURNEZ SUR LA PAGE D'ACCEUIL </a>
+                    <a href="../public/index.php">RETOURNEZ SUR LA PAGE D'ACCEUIL </a>
                 </p><br>
                 <!---->
 
