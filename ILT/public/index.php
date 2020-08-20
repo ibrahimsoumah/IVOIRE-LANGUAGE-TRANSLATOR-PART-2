@@ -27,7 +27,7 @@ if ($page === 'public') {
         <nav class="navbar navbar-expand-lg navbar-dark ">
 
             <!-- logo  -->
-            <a class="navbar-brand" href="acceuil.php"><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" height="60px" width="60px"></a>
+            <a class="navbar-brand" href="index.php"><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" height="60px" width="60px"></a>
 
             <!-- text ivoire language translator -->
             <a class="nav-link itltext" href="index.php"><span style="color: rgb(12, 199, 12); font-size :1.5em;font-family:Verdana,sans-serif "><b>IVOIRE </b></span> <span style="color: rgb(255, 145, 77); font-size :1.5em;font-family:Verdana,sans-serif"><b> LANGUAGE</b> </span> <span style="color: rgb(12, 199, 12); font-size :1.5em;font-family:Verdana,sans-serif"><b> TRANSLATOR </b></span>
