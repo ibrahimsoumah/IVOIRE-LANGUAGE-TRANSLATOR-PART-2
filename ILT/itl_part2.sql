@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 20 août 2020 à 16:25
+-- Généré le : jeu. 20 août 2020 à 16:40
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.4.8
 
@@ -57,6 +57,32 @@ INSERT INTO `data` (`id`, `texte1`, `langue_start`, `texte2`, `langue_end`, `aud
 (1, 'femme', 'Français', 'wonnon', 'bété', 'daudios/BTfemme.m4a', '2020-07-02 11:39:15'),
 (2, 'viens manger', 'Français', 'hi ké li', 'bété', 'daudios/BTviensmanger.m4a', '2020-07-03 01:17:09'),
 (3, 'je suis une femme', 'Français', 'é non wonnon mon', 'bété', 'daudios/BTjesuisunefemme.m4a', '2020-07-03 01:22:04');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `graph`
+--
+
+CREATE TABLE `graph` (
+  `id` int(11) NOT NULL,
+  `search` varchar(255) NOT NULL,
+  `count` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `graph`
+--
+
+INSERT INTO `graph` (`id`, `search`, `count`) VALUES
+(6, 'piment', '3'),
+(11, 'je suis une femme', '5'),
+(14, 'homme', '19'),
+(15, 'poisson', '7'),
+(16, 'femme', '5'),
+(17, 'foutou', '1'),
+(18, 'riz', '23'),
+(21, 'viens manger', '14');
 
 -- --------------------------------------------------------
 
@@ -203,6 +229,12 @@ ALTER TABLE `data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `graph`
+--
+ALTER TABLE `graph`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `langues`
 --
 ALTER TABLE `langues`
@@ -241,6 +273,12 @@ ALTER TABLE `activités`
 --
 ALTER TABLE `data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `graph`
+--
+ALTER TABLE `graph`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `langues`
