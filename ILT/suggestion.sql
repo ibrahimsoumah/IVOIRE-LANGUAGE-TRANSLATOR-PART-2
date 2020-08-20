@@ -7,9 +7,11 @@
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE
+= "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone
+= "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,13 +29,20 @@ SET time_zone = "+00:00";
 -- Structure de la table `suggestion`
 --
 
-CREATE TABLE `suggestion` (
-  `id` int(11) NOT NULL,
-  `texte1` varchar(255) NOT NULL,
-  `langue_start` varchar(255) NOT NULL,
-  `texte2` varchar(255) NOT NULL,
-  `langue_end` varchar(255) NOT NULL,
-  `audio` varchar(255) NOT NULL,
+CREATE TABLE `suggestion`
+(
+  `id` int
+(11) NOT NULL,
+  `texte1` varchar
+(255) NOT NULL,
+  `langue_start` varchar
+(255) NOT NULL,
+  `texte2` varchar
+(255) NOT NULL,
+  `langue_end` varchar
+(255) NOT NULL,
+  `audio` varchar
+(255) NOT NULL,
   `datec` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,7 +50,10 @@ CREATE TABLE `suggestion` (
 -- Déchargement des données de la table `suggestion`
 --
 
-INSERT INTO `suggestion` (`id`, `texte1`, `langue_start`, `texte2`, `langue_end`, `audio`, `datec`) VALUES
+INSERT INTO `suggestion` (`
+id`,
+`texte1
+`, `langue_start`, `texte2`, `langue_end`, `audio`, `datec`) VALUES
 (1, 'femme', 'Français', 'debbo', 'Français', 'daudios/viens manger.m4a', '0000-00-00 00:00:00'),
 (2, 'femme', 'Français', 'debbo', 'Français', 'daudios/viens manger.m4a', '0000-00-00 00:00:00'),
 (3, 'femme', 'Français', 'debbo', 'dioula', 'daudios/ma maman.m4a', '2020-08-06 01:15:53');
@@ -54,7 +66,8 @@ INSERT INTO `suggestion` (`id`, `texte1`, `langue_start`, `texte2`, `langue_end`
 -- Index pour la table `suggestion`
 --
 ALTER TABLE `suggestion`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY
+(`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -64,7 +77,8 @@ ALTER TABLE `suggestion`
 -- AUTO_INCREMENT pour la table `suggestion`
 --
 ALTER TABLE `suggestion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int
+(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
