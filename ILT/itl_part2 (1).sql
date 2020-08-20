@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 20 août 2020 à 11:49
+-- Généré le : jeu. 20 août 2020 à 16:25
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.4.8
 
@@ -137,6 +137,22 @@ INSERT INTO `recherches` (`id`, `search_text`, `langue_start`, `langue_end`, `ip
 (6, 'viens manger', 'Français', 'bété', '::1', '', '2020-07-03'),
 (7, 'viens manger', 'Français', 'bété', '::1', '', '2020-07-03'),
 (8, 'je suis une femme', 'Français', 'bété', '::1', '', '2020-07-03');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `suggestion`
+--
+
+CREATE TABLE `suggestion` (
+  `id` int(11) NOT NULL,
+  `texte1` varchar(255) NOT NULL,
+  `langue_start` varchar(255) NOT NULL,
+  `texte2` varchar(255) NOT NULL,
+  `langue_end` varchar(255) NOT NULL,
+  `audio` varchar(255) NOT NULL,
+  `datec` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
