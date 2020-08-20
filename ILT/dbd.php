@@ -105,9 +105,6 @@ if (isset($_SESSION['nometprenoms'])) {
   if ($role != 'Administrateur' && $role != 'Superviseur') {
   ?>
 
-
-
-
     <div class="sidebar ">
       <br><br><a href="#dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a><br><br><br><br>
       <a href="editpwd.php"><i class="fa fa-key" aria-hidden="true"></i> Modifier mon mot de passe</a><br>
@@ -126,9 +123,9 @@ if (isset($_SESSION['nometprenoms'])) {
           Bienvenue : <?php echo $role; ?> <?php echo $nometprenoms; ?> <br></br>
         </div>
 
+
         <center>
           <h2>Table des traductions</h2>
-
         </center>
         <div class="row">
           <div class="col-md-12 offset-md-2">
@@ -476,9 +473,63 @@ if (isset($_SESSION['nometprenoms'])) {
     </div>
     <br><br><br>
 
+    <center>
+      <h2>Table des suggestions</h2>
+    </center>
+    <center>
+      <div class="row" style="float=center;">
+        <div class="col-md-12 offset-md-2">
+          <table class="table table-responsive table-bordered table-hovered">
+            <thead>
+              <tr>
+                <td>Id</td>
+                <td>texte</td>
+                <td>langue d'origine</td>
+                <td>traduction</td>
+                <td>langue de traduction</td>
+                <td>Fichier audio</td>
+                <td>Date</td>
+                <td>Option</td>
 
-    </p>
-    </div>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+
+              $sql = "SELECT id, texte1, langue_start, texte2, langue_end, audio, datec FROM suggestion";
+              $result = mysqli_query($con, $sql);
+              while ($row = mysqli_fetch_array($result)) {
+              ?>
+
+
+                <tr>
+                  <td><?php echo $row['id'] ?></td>
+                  <td><?php echo $row['texte1'] ?></td>
+                  <td><?php echo $row['langue_start'] ?></td>
+                  <td><?php echo $row['texte2'] ?></td>
+                  <td><?php echo $row['langue_end'] ?></td>
+
+                  <td>
+                    <audio controls>
+                      <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+                    </audio>
+                  </td>
+                  <td><?php echo $row['datec'] ?></td>
+                  <td>
+
+                    <a href="deltext.php?id=<?php echo $row['id'] ?>" class="btn btn-primary"> <i class="far fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      </p>
+      </div>
+    </center>
 
   <?php
   }
