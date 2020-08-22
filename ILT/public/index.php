@@ -215,7 +215,7 @@ if ($page === 'public') {
                 <hr width="40%" color="#007bff">
             </center>
             <!-- ma partie commence ici -->
-            <h2 style="margin-top:50px;margin-bottom:50px;color:#555555;letter-spacing: 3px;"><span style="color:rgb(12, 199, 12);">IVOIRE</span><span style="color:rgb(255, 145, 77);">LANGUAGE</span><span style="color:rgb(12, 199, 12);">TRANSLATOR</span>EST UN TRADUCTEUR DE TEXTE<br><br>GRATUIT QUI PREND EN CHARGE TOUT LES NAVIGATEURS<br>MODERNES,
+            <h2 style="margin-top:50px;margin-bottom:50px;color:#555555;letter-spacing: 3px;"><span style="color:rgb(12, 199, 12);">IVOIRE</span><span style="color:rgb(255, 145, 77);">LANGUAGE</span><span style="color:rgb(12, 199, 12);">TRANSLATOR </span>EST UN TRADUCTEUR DE TEXTE<br><br>GRATUIT QUI PREND EN CHARGE TOUT LES NAVIGATEURS<br>MODERNES,
                 Y COMPRIS CHROME FIREFOX ET SAFARI</h2>
             <div class="row">
                 <div class="col-sm-4">
