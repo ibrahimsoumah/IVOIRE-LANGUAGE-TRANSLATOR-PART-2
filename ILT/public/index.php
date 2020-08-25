@@ -187,7 +187,7 @@ if ($page === 'public') {
                     <?php } else { ?>
                         <div>
                             <p>
-                                <font color='red'> Traduction non disponible <br> <a href="../suggestions.php">Soumettre une proposition de traduction</a>
+                                <font color='red'> Traduction non disponible <br> <a href="public/suggestion.php">Soumettre une proposition de traduction</a>
                             </p>
                         </div>
             <?php }
@@ -221,7 +221,7 @@ if ($page === 'public') {
                 <div class="col-sm-4">
                     <div class="">
                         <div class="card-body">
-                            <center><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" class="image-ronde" height="70px" width="70px" style=""></center>
+                            <center><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" class="image-ronde" height="70px" width="70px"></center>
                             <h4 class="card-title" style="margin-top: 20px;">EN LIGNE,
                                 GRATUIT.</h4>
                             <p class="card-text" style="margin-top:40px;color:#6b6b6b">Pas besoin de payer ou de creer de compte,

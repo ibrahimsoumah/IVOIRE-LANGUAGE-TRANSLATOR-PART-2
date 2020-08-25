@@ -30,14 +30,13 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IVOIRE LANGUAGE TRANSLATOR</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- favicon(icone) du site-->
+    <link rel="icon" type="image/png" href="../public/assets/LogoIvoireLanguagesTranslatoweb.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../public/style/acceuil.css">
-    <style>
 
-
-    </style>
 </head>
 
 
@@ -93,7 +92,7 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
                         <div class="form-group centrer1" style="margin-top: 30px;">
                             <label><strong>VOS PROPOSITIONS D'AMELIORATIONS</strong></label><br>
                             <div>
-                                <textarea name="proposition" id="proposition" cols="58" rows="5" placeholder="Entrer vos differentes propositions !!" style="background: #e1e1e1;" required></textarea>
+                                <textarea name="proposition" id="proposition" cols="56" rows="5" placeholder="Entrer vos differentes propositions !!" style="background: #e1e1e1;" required></textarea>
 
                             </div>
                         </div>
@@ -103,7 +102,7 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
                         <div class="form-group centrer1" style="margin-top: 30px;">
                             <label><strong>VOS CRITIQUES</strong></label><br>
                             <div>
-                                <textarea name="critiques" id="proposition" cols="58" rows="5" placeholder="Entrer vos critiques !!" style="background: #e1e1e1;" required></textarea>
+                                <textarea name="critiques" id="proposition" cols="56" rows="5" placeholder="Entrer vos critiques !!" style="background: #e1e1e1;" required></textarea>
 
                             </div>
                         </div>
@@ -118,6 +117,8 @@ if (isset($_POST['soumettre']) and !empty($_POST['email']) and !empty($_POST['pr
                 </div>
             </div>
         </div>
+
+
     </main>
 </body>
 
