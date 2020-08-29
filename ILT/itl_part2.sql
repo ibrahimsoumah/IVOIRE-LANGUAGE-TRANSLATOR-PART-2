@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 25 août 2020 à 16:51
+-- Généré le : sam. 29 août 2020 à 22:05
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.4.8
 
@@ -126,7 +126,111 @@ INSERT INTO `data` (`id`, `texte1`, `langue_start`, `texte2`, `langue_end`, `aud
 (71, 'chaleur', 'Français', 'ssè mou', 'Abbey', 'daudios/', '2020-08-25 04:47:29'),
 (72, 'désolé', 'Français', 'm ssè rê', 'Abbey', 'daudios/', '2020-08-25 04:48:28'),
 (73, 'Froid', 'Français', ' Fé', 'Abbey', 'daudios/', '2020-08-25 04:48:52'),
-(74, 'fraîcheur', 'Français', ' Fé', 'Abbey', 'daudios/', '2020-08-25 04:49:24');
+(74, 'fraîcheur', 'Français', ' Fé', 'Abbey', 'daudios/', '2020-08-25 04:49:24'),
+(75, 'ancien', 'Français', 'kidoun', 'Peulh', 'daudios/ancien.m4a', '2020-08-28 10:28:08'),
+(76, 'autre', 'Français', 'godoungo', 'Peulh', 'daudios/autre.m4a', '2020-08-28 10:28:40'),
+(77, 'beau', 'Français', 'hinolabha', 'Peulh', 'daudios/beau.m4a', '2020-08-28 10:29:06'),
+(78, 'chaud', 'Français', 'hinowouli', 'Peulh', 'daudios/chaud.m4a', '2020-08-28 10:29:38'),
+(79, 'clair', 'Français', 'nodjalbi', 'Peulh', 'daudios/clair.m4a', '2020-08-28 10:30:06'),
+(80, 'content', 'Français', 'nowelti', 'Peulh', 'daudios/content.m4a', '2020-08-28 10:30:42'),
+(81, 'dernier', 'Français', 'sakitoro', 'Peulh', 'daudios/dernier.m4a', '2020-08-28 10:31:39'),
+(82, 'different', 'Français', 'wonagotoun', 'Peulh', 'daudios/different.m4a', '2020-08-28 10:32:04'),
+(83, 'difficile', 'Français', 'nossati', 'Peulh', 'daudios/difficile.m4a', '2020-08-28 10:32:39'),
+(84, 'doux', 'Français', 'noweli', 'Peulh', 'daudios/doux.m4a', '2020-08-28 10:37:48'),
+(85, 'drôle', 'Français', 'nokirdi', 'Peulh', 'daudios/drôle.m4a', '2020-08-28 10:38:57'),
+(86, 'entier', 'Français', 'notimmi', 'Peulh', 'daudios/entier.m4a', '2020-08-28 10:39:23'),
+(87, 'facile', 'Français', 'nowelifi', 'Peulh', 'daudios/facil.m4a', '2020-08-28 10:39:58'),
+(88, 'faux', 'Français', 'fenadè', 'Peulh', 'daudios/faux.m4a', '2020-08-28 10:40:28'),
+(89, 'gros', 'Français', 'modjandi', 'Peulh', 'daudios/gros.m4a', '2020-08-28 10:41:01'),
+(90, 'heureux', 'Français', 'himowelti', 'Peulh', 'daudios/heureux.m4a', '2020-08-28 10:41:33'),
+(91, 'juste', 'Français', 'kononwoniri', 'Peulh', 'daudios/juste.m4a', '2020-08-28 10:45:42'),
+(92, 'malade', 'Français', 'ossèla', 'Peulh', 'daudios/malade.m4a', '2020-08-28 10:46:12'),
+(93, 'mauvais', 'Français', 'omodja', 'Peulh', 'daudios/mauvais.m4a', '2020-08-28 10:46:48'),
+(94, 'même', 'Français', 'gotoun', 'Peulh', 'daudios/même.m4a', '2020-08-28 10:47:59'),
+(95, 'pauvre', 'Français', 'baydolo', 'Peulh', 'daudios/pauvre.m4a', '2020-08-28 10:49:14'),
+(96, 'propre', 'Français', 'nolabhi', 'Peulh', 'daudios/propre.m4a', '2020-08-28 10:49:52'),
+(97, 'rouge', 'Français', 'bodè', 'Peulh', 'daudios/rouge.m4a', '2020-08-28 10:50:37'),
+(98, 'sale', 'Français', 'notouni', 'Peulh', 'daudios/sale.m4a', '2020-08-28 10:51:10'),
+(99, 'serieux', 'Français', 'himokelti', 'Peulh', 'daudios/sérieux.m4a', '2020-08-28 10:51:37'),
+(100, 'super', 'Français', 'èyoALLAH', 'Peulh', 'daudios/super.m4a', '2020-08-28 10:52:09'),
+(101, 'toute', 'Français', 'fope', 'Peulh', 'daudios/toute.m4a', '2020-08-28 10:52:37'),
+(102, 'vieux', 'Français', 'mahoudo', 'Peulh', 'daudios/vieux.m4a', '2020-08-28 10:53:08'),
+(103, 'vrai', 'Français', 'kogoga', 'Peulh', 'daudios/vrai.m4a', '2020-08-28 10:53:32'),
+(104, 'super', 'Français', 'ènèni', 'bété', 'daudios/BTsuper.m4a', '2020-08-28 11:12:42'),
+(105, 'autre', 'Français', 'vinin', 'bété', 'daudios/BTautre.m4a', '2020-08-28 11:13:26'),
+(106, 'bizarre', 'Français', 'ècossabrou', 'bété', 'daudios/BTbizarre.m4a', '2020-08-28 11:13:55'),
+(107, 'certain', 'Français', 'vinin', 'bété', 'daudios/BTautre.m4a', '2020-08-28 11:14:33'),
+(108, 'prochain', 'Français', 'vinin', 'bété', 'daudios/BTautre.m4a', '2020-08-28 11:15:02'),
+(109, 'difficile', 'Français', 'ètèmin', 'bété', 'daudios/BTdifficile(grave).m4a', '2020-08-28 11:15:41'),
+(110, 'drole', 'Français', 'èléglaco', 'bété', 'daudios/BTdrole.m4a', '2020-08-28 11:16:18'),
+(111, 'facile', 'Français', 'némétin', 'bété', 'daudios/BTfacile.m4a', '2020-08-28 11:16:49'),
+(112, 'jeune', 'Français', 'woody_oh_digba', 'bété', 'daudios/BTjeune.m4a', '2020-08-28 11:17:33'),
+(113, 'juste', 'Français', 'èkokpéé', 'bété', 'daudios/BTjuste.m4a', '2020-08-28 11:18:07'),
+(114, 'malade', 'Français', 'angou', 'bété', 'daudios/BTmalade.m4a', '2020-08-28 11:18:38'),
+(115, 'pauvre', 'Français', 'pouè', 'bété', 'daudios/BTpauvre.m4a', '2020-08-28 11:19:04'),
+(116, 'possible', 'Français', 'èbèlé', 'bété', 'daudios/BTpossible.m4a', '2020-08-28 11:19:33'),
+(117, 'propre', 'Français', 'hénènouko', 'Peulh', 'daudios/BTpropre.m4a', '2020-08-28 11:20:01'),
+(118, 'rouge', 'Français', 'zèlé', 'bété', 'daudios/BTrouge.m4a', '2020-08-28 11:20:31'),
+(119, 'sale', 'Français', 'fé', 'bété', 'daudios/BTsale.m4a', '2020-08-28 11:21:04'),
+(120, 'simple', 'Français', 'ècofouho', 'bété', 'daudios/BTsimple.m4a', '2020-08-28 11:21:55'),
+(121, 'tranquille', 'Français', 'vrihé', 'bété', 'daudios/BTtranquille.m4a', '2020-08-28 11:22:29'),
+(122, 'triste', 'Français', 'gninzé', 'bété', 'daudios/BTtriste.m4a', '2020-08-28 11:23:22'),
+(123, 'vide', 'Français', 'couho', 'bété', 'daudios/BTvide.m4a', '2020-08-28 11:24:02'),
+(124, 'bonne', 'Français', 'nèni', 'bété', 'daudios/BTbonne.m4a', '2020-08-28 11:24:37'),
+(125, 'toute', 'Français', 'cléclé', 'bété', 'daudios/', '2020-08-28 11:25:52'),
+(126, 'doux', 'Français', 'mèni', 'bété', 'daudios/BTdoux.m4a', '2020-08-28 11:26:32'),
+(127, 'faux', 'Français', 'yio', 'bété', 'daudios/BTfaux.m4a', '2020-08-28 11:27:11'),
+(128, 'français', 'Français', 'gomlan_gbo', 'bété', 'daudios/BTfrancais.m4a', '2020-08-28 11:28:08'),
+(129, 'heureux', 'Français', 'ouannan', 'bété', 'daudios/BTheureux.m4a', '2020-08-28 11:28:51'),
+(130, 'mauvais', 'Français', 'gningni', 'bété', 'daudios/BTmauvais.m4a', '2020-08-28 11:29:21'),
+(131, 'serieux', 'Français', 'okotéé', 'bété', 'daudios/BTserieux.m4a', '2020-08-28 11:29:58'),
+(132, 'vieux', 'Français', 'gognon', 'bété', 'daudios/BTvieux.m4a', '2020-08-28 11:30:31'),
+(133, 'vrai', 'Français', 'diè', 'bété', 'daudios/BTvrai.m4a', '2020-08-28 11:30:59'),
+(134, 'ancien', 'Français', 'gogo', 'bété', 'daudios/BTancien.m4a', '2020-08-28 11:31:25'),
+(135, 'beau', 'Français', 'bagnon', 'bété', 'daudios/BTbeau.m4a', '2020-08-28 11:31:52'),
+(136, 'blanc', 'Français', 'fah', 'bété', 'daudios/BTblanc.m4a', '2020-08-28 11:32:19'),
+(137, 'cher', 'Français', 'ètèpriko', 'bété', 'daudios/BTcher.m4a', '2020-08-28 11:32:50'),
+(138, 'dernier', 'Français', 'bémin', 'bété', 'daudios/BTdernier.m4a', '2020-08-28 11:33:13'),
+(139, 'different', 'Français', 'èniblémin', 'bété', 'daudios/BTdifferent.m4a', '2020-08-28 11:33:51'),
+(140, 'droit', 'Français', 'gbihi', 'bété', 'daudios/BTdroit.m4a', '2020-08-28 11:35:19'),
+(141, 'entier', 'Français', 'èwaniclo', 'bété', 'daudios/BTentier.m4a', '2020-08-28 11:35:48'),
+(142, 'froid', 'Français', 'wotro', 'bété', 'daudios/BTfroid.m4a', '2020-08-28 11:37:03'),
+(143, 'gentil', 'Français', 'oninnnidréko', 'bété', 'daudios/BTgentille.m4a', '2020-08-28 11:37:33'),
+(144, 'grand', 'Français', 'yité', 'bété', 'daudios/BTgrand.m4a', '2020-08-28 11:38:07'),
+(145, 'haut', 'Français', 'ètroko', 'bété', 'daudios/BThaut.m4a', '2020-08-28 11:38:37'),
+(146, 'humain', 'Français', 'gnekpa', 'bété', 'daudios/BThumain.m4a', '2020-08-28 11:39:04'),
+(147, 'jolie', 'Français', 'ènèni', 'bété', 'daudios/BTjoli.m4a', '2020-08-28 11:44:49'),
+(148, 'jolie', 'Français', 'ènèni', 'bété', 'daudios/BTjoli.m4a', '2020-08-28 11:50:08'),
+(149, 'leger', 'Français', 'foco', 'bété', 'daudios/', '2020-08-28 11:51:07'),
+(150, 'long', 'Français', 'ètromi', 'bété', 'daudios/BTlong.m4a', '2020-08-28 11:51:36'),
+(151, 'meilleur', 'Français', 'èziko', 'bété', 'daudios/BTmeilleur.m4a', '2020-08-28 11:52:21'),
+(152, 'nouveau', 'Français', 'lélé', 'bété', 'daudios/BTnouveau.m4a', '2020-08-28 11:52:52'),
+(153, 'pareil', 'Français', 'mlé', 'bété', 'daudios/BTpareil.m4a', '2020-08-28 11:53:55'),
+(154, 'petit', 'Français', 'tékéhi', 'bété', 'daudios/BTpetit.m4a', '2020-08-28 11:54:20'),
+(155, 'plein', 'Français', 'èyihé', 'bété', 'daudios/BTplein.m4a', '2020-08-28 11:54:47'),
+(156, 'premier', 'Français', 'youcou', 'bété', 'daudios/BTpremier.m4a', '2020-08-28 11:55:14'),
+(157, 'quoi', 'Français', 'tèkoi', 'bété', 'daudios/BTquoi.m4a', '2020-08-28 11:56:06'),
+(158, 'seul', 'Français', 'gboro', 'bété', 'daudios/BTseul.m4a', '2020-08-28 11:56:36'),
+(159, 'vivant', 'Français', 'oyè', 'bété', 'daudios/BTvivant.m4a', '2020-08-28 11:57:06'),
+(160, 'aide', 'Français', 'okpèlio', 'bété', 'daudios/BTaide.m4a', '2020-08-28 11:57:30'),
+(161, 'chef', 'Français', 'fi', 'bété', 'daudios/BTchef.m4a', '2020-08-28 11:58:54'),
+(162, 'enfant', 'Français', ' you', 'bété', 'daudios/BTenfant.m4a', '2020-08-28 11:59:25'),
+(163, 'gauche', 'Français', 'okpè', 'bété', 'daudios/BTgauche.m4a', '2020-08-28 11:59:59'),
+(164, 'geste', 'Français', 'zigbo', 'bété', 'daudios/BTgeste.m4a', '2020-08-28 12:00:30'),
+(165, 'livre', 'Français', 'borgo', 'bété', 'daudios/BTlivre.m4a', '2020-08-28 12:01:15'),
+(166, 'merci', 'Français', 'yawouo', 'bété', 'daudios/BTmerci.m4a', '2020-08-28 12:01:44'),
+(167, 'ombre', 'Français', 'zouzou', 'bété', 'daudios/BTombre.m4a', '2020-08-28 12:02:42'),
+(168, 'part', 'Français', 'homédè', 'bété', 'daudios/BTpart.m4a', '2020-08-28 12:03:20'),
+(169, 'poche', 'Français', 'poché', 'bété', 'daudios/BTpoche.m4a', '2020-08-28 12:03:55'),
+(170, 'madame', 'Français', 'monni_wonnon', 'bété', 'daudios/BTmadame.m4a', '2020-08-28 12:04:29'),
+(171, 'paix', 'Français', 'waléwaliè', 'bété', 'daudios/BTpaix.m4a', '2020-08-28 12:05:19'),
+(172, 'voix', 'Français', 'wèlé', 'bété', 'daudios/BTvoix.m4a', '2020-08-28 12:05:42'),
+(173, 'affaire', 'Français', 'gbo', 'bété', 'daudios/BTaffaire.m4a', '2020-08-28 12:06:04'),
+(174, 'arme', 'Français', 'kossougou', 'bété', 'daudios/BTarme.m4a', '2020-08-28 12:06:29'),
+(175, 'armée', 'Français', 'srodja', 'bété', 'daudios/BTarmée.m4a', '2020-08-28 12:07:03'),
+(176, 'attention', 'Français', 'manamin', 'bété', 'daudios/BTattention.m4a', '2020-08-28 12:07:31'),
+(177, 'boite', 'Français', 'clokoua', 'bété', 'daudios/BTboite.m4a', '2020-08-28 12:08:11'),
+(178, 'bouche', 'Français', 'mouha', 'bété', 'daudios/BTbouche.m4a', '2020-08-28 12:08:39');
 
 -- --------------------------------------------------------
 
@@ -176,7 +280,8 @@ INSERT INTO `langues` (`id`, `langue`, `datec`) VALUES
 (4, 'Français', '2020-06-28 03:18:18'),
 (5, 'Anglais', '2020-06-28 03:18:48'),
 (6, 'Baoulé', '2020-06-30 05:16:52'),
-(7, 'Abbey', '2020-08-25 04:29:22');
+(7, 'Abbey', '2020-08-25 04:29:22'),
+(8, 'Peulh', '2020-08-28 10:19:17');
 
 -- --------------------------------------------------------
 
@@ -361,7 +466,7 @@ ALTER TABLE `activités`
 -- AUTO_INCREMENT pour la table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT pour la table `users`
