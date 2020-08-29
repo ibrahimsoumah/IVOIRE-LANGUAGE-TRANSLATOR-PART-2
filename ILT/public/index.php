@@ -289,7 +289,7 @@ else{
         <p class="textblocvert2" style="margin-bottom: 15px;">Vous trouvez qu'il ya un texte mal traduit ? Vous avez des idées pour nous aider à nous ameliorer ? Alors <br> n'hesitez pas envoyer nous un message nous vous répondrons dans les plus brefs délais</p><a href="commentaire.php"><button class="bouttonBlocVert">Envoyez un message </button></a>
     </div>
 
-    <!-- Visites: $ visites; -->
+    <!-- Visites: $ visites;
     <table class="table table-dark">
         <thead>
             <tr>
@@ -298,9 +298,9 @@ else{
         </thead>
         <tbody>
             <tr>
-                <th scope="row"><?php include('../compteurvisite.php'); ?></th>
+                <th scope="row"> include('../compteurvisite.php'); ?></th>
             </tr>
-        </tbody>
+        </tbody> -->
     </table>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
