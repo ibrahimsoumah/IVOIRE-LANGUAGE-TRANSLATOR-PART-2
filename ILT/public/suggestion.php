@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<?php include('connection.php'); ?>
+<?php include('../connection.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -85,7 +85,7 @@ session_start();
       </div>
     </div>
   </div>
-  <?php include('connection.php');
+  <?php include('../connection.php');
 
   if (isset($_POST['Enregistrer'])) {
     $texte1 = $_POST['texte1'];
@@ -109,7 +109,7 @@ session_start();
 
     if ($resultats) {
       echo '<script language="Javascript">';
-      echo 'document.location.replace("./dbd.php")'; // -->
+      echo 'document.location.replace("../dbd.php")'; // -->
       echo ' </script>';
 
       echo "";

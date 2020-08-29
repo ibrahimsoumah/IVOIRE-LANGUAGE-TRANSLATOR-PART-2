@@ -63,8 +63,8 @@ if ($page === 'public') {
             border-style: solid;
             border-width: 2px;
             border-color: black;
-            width: 400px;
-            height: 100px;
+            width: 500px;
+            height: 130px;
         }
     </style>
 </head>
@@ -163,36 +163,57 @@ if ($page === 'public') {
         <div class="tradwindow" id="champ1status">
             <?php
 
-            if (isset($_POST['Traduire'])) {
 
-                $search_text = $_POST['champ1'];
-                $langue_start = $_POST['langue_start'];
-                $langue_end = $_POST['langue_end'];
-                $ip = $_SERVER['REMOTE_ADDR'];
-                $date = date("Y-m-d h:i:s");
-                $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+    
+if (isset($_POST['Traduire'])) {
 
-                if (mysqli_query($con, $sql)) {
+    $search_text = $_POST['champ1'];
+    $langue_start = $_POST['langue_start'];
+    $langue_end = $_POST['langue_end'];
+    $ip = $_SERVER['REMOTE_ADDR'];
 
-                    $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-                    $result = mysqli_query($con, $query);
+    $date = date("Y-m-d h:i:s");
+    // $sql = "INSERT INTO recherche (search_text, langue_start, langue_end, ip, date_enrg) 
+    // VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-                    if ($row = mysqli_fetch_array($result)) { ?>
-                        <div id="reponse">
-                            <?php echo $row['texte2'] ?> <br>
-                            <audio controls>
-                                <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-                            </audio>
-                        </div>
-                    <?php } else { ?>
-                        <div>
-                            <p>
-                                <font color='red'> Traduction non disponible <br> <a href="public/suggestion.php">Soumettre une proposition de traduction</a>
-                            </p>
-                        </div>
-            <?php }
-                }
-            } ?>
+   
+
+      $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
+        $result = mysqli_query($con, $query);
+        //var_dump($result);
+        $rowcount=mysqli_num_rows($result);
+        $row = mysqli_fetch_array($result);
+        //var_dump($row);
+        //var_dump($rowcount);
+          if($rowcount > 0) {
+          ?>
+         
+          
+          <tr>
+          <td> <?php echo $row['texte2']?> </td>
+          <br>
+          
+            <audio controls>
+              <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+            </audio>
+          <p class="text-sm"><a href="suggestion.php">Soumettre une traduction ?</a></p>
+          <br><br><br>
+          </div>
+          </div>
+          </div>
+          <?php  }else{
+            echo "<p>aucune traduction trouvé </p><br><p class='text-sm'><a href='suggestion.php'>Soumettre une traduction ?</a></p>";
+          }
+           ?>
+
+          <?php    
+      }
+else{
+  echo '';
+}
+
+
+?>
         </div>
     </div>
     <!--  -->
@@ -267,60 +288,6 @@ if ($page === 'public') {
         <p class="textblocvert" style="margin-bottom: 35px;margin-top:30px">Premier traducteur de langues locales en côte d'ivoire <br> Construit pour vous facilter la vie .</p>
         <p class="textblocvert2" style="margin-bottom: 15px;">Vous trouvez qu'il ya un texte mal traduit ? Vous avez des idées pour nous aider à nous ameliorer ? Alors <br> n'hesitez pas envoyer nous un message nous vous répondrons dans les plus brefs délais</p><a href="commentaire.php"><button class="bouttonBlocVert">Envoyez un message </button></a>
     </div>
-
-
-
-    <footer>
-	<div class="footer-top">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-30">
-					<h3>A propos de nous</h3>
-					<p>Ivoire Languages Translator a été conçu pour faciliter vos discutions avec d'autres communauté.</p>
-						<p>Voir notre page <a href="#">Conidentalité et condition du site</a></p>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sm-mb-30">
-					<h3>Contact</h3>
-					<ul>
-						<li><a href="#" style="color: red">SIMPLON COTE D'IVOIRE</a></li>
-						<li><a href="#">no_reply@simplonline.co</a></li>
-						<li><a href="#">00-00-00-00</a></li>
-						<li><a href="#">Blog</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
-					<h3>Suivez-nous</h3>
-					<p>Réjoingnez nous sur google play & app storeger</p>
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-pinterest"></i></a>
-				</div>
-				 <div class="col-md-3 col-sm-6 col-xs-12 box segment-four sm-mb-30"> <!-
-					<strong><h3>Commentaire</h3></strong> 
-					<p>Donnez vos avis à propos du site</p>
-			<!--	<form action="">- class="box" 
-						<input type="email" name="">
-						<input type="submit" value="subscribe">
-					 </form> -->
-					<form action="">
-						<label for="mail">Email <span>*</span> </label>
-						<input type="email" name="mail" id="mail" required>
-						<label for="mmes">Message <span>*</span> </label>
-						<textarea name="mess" id="mess" rows="3" required></textarea>
-						<button type="submit">Send</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<p class="footer-bottom-text">copyright &copy; - 2020</p>
-	
-</footer>
-
-
-
-
 
     <!-- Visites: $ visites; -->
     <table class="table table-dark">
