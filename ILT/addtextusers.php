@@ -95,7 +95,7 @@ session_start();
     $texte2 = $_POST['texte2'];
     $langue_end = $_POST['langue_end'];
     $date = date("Y-m-d h:i:s");
-    $target_dir = "daudios/";
+    $target_dir = "public/daudios/";
     $target_file = $target_dir . basename($_FILES["audio"]["name"]);
 
     $sql = "INSERT INTO data (texte1, langue_start, texte2, langue_end, audio, datec)

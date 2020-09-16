@@ -67,6 +67,142 @@ if ($page === 'public') {
             height: 130px;
         }
     </style>
+    <style>
+        .footer-top {
+            background: #111;
+            padding: 80px 0;
+        }
+
+        .segment-one h3 {
+            font-family: Courgette;
+            color: #fff;
+            letter-spacing: 3px;
+            margin: 10px 0;
+        }
+
+        .segment-two h2 {
+            color: #fff;
+            font-family: Poppins;
+            text-transform: uppercase;
+        }
+
+        .segment-two h2:before {
+            content: '|';
+            color: #c65039;
+            padding-right: 10px;
+        }
+
+        .segment-two ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .segment-two ul li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            line-height: 40px;
+        }
+
+        .segment-two ul li a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .segment-three h2 {
+            color: #fff;
+            font-family: Poppins;
+            text-transform: uppercase;
+        }
+
+        .segment-three h2:before {
+            content: '|';
+            color: #c65039;
+            padding-right: 10px;
+        }
+
+        .segment-three a {
+            background: #494848;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .segment-three a i {
+            font-size: 20px;
+            color: #fff;
+            padding: 10px 12px;
+        }
+
+        .segment-four h2 {
+            color: #fff;
+            font-family: Poppins;
+            text-transform: uppercase;
+        }
+
+        .segment-four h2:before {
+            content: '|';
+            color: #c65039;
+            padding-right: 10px;
+        }
+
+        .segment-four form input[type=submit] {
+            background: #c65039;
+            border: none;
+            padding: 3px 15px;
+            margin-left: -5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .footer-bottom-text {
+            text-align: center;
+            background: #000;
+            line-height: 75px;
+        }
+
+        /* responsive css */
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .md-mb-30 {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .sm-mb-30 {
+                margin-bottom: 30px;
+            }
+
+            .footer-top {
+                padding: 50px 0;
+            }
+        }
+
+        /* ****************** */
+
+        footer {
+            width: 100%;
+            background: #222;
+            color: #aaa;
+        }
+
+        .bloc2 {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        form button {
+            width: 50%;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: crimson;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -146,150 +282,157 @@ if ($page === 'public') {
                 </div>
             </div>
             <div class="row">
-                <div class="col col-sm-6">
-                    <textarea class="textarea" name="champ1" id="champ1" cols="50" rows="5" onkeyup="check();"></textarea>
+                <div class="col col-sm-4">
+                    <textarea class="textarea" name="champ1" id="champ1" cols="50" rows="5" onkeyup="check();"> <?php
+                                                                                                                $champ1 = "";
+                                                                                                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                                                                                                    $champ1 = $_POST['champ1'];
+                                                                                                                }
+                                                                                                                echo $champ1 ?></textarea>
                 </div>
-                <div class="col col-sm-6">
+                <div class="col col-sm-5">
 
                 </div>
             </div>
             <div class="row">
-                <div class="col col-sm-6">
+                <div class="col col-sm-2">
                     <input type="submit" value="Traduire" name="Traduire" class="btn btn-success">
                 </div>
             </div>
         </form>
+        <div class="row">
+            <div class="tradwindow" id="champ1status  ">
+                <?php
 
-        <div class="tradwindow" id="champ1status">
-            <?php
 
 
-    
-if (isset($_POST['Traduire'])) {
+                if (isset($_POST['Traduire'])) {
 
-    $search_text = $_POST['champ1'];
-    $langue_start = $_POST['langue_start'];
-    $langue_end = $_POST['langue_end'];
-    $ip = $_SERVER['REMOTE_ADDR'];
+                    $search_text = $_POST['champ1'];
+                    $langue_start = $_POST['langue_start'];
+                    $langue_end = $_POST['langue_end'];
+                    $ip = $_SERVER['REMOTE_ADDR'];
 
-    $date = date("Y-m-d h:i:s");
-    // $sql = "INSERT INTO recherche (search_text, langue_start, langue_end, ip, date_enrg) 
-    // VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+                    $date = date("Y-m-d h:i:s");
+                    // $sql = "INSERT INTO recherche (search_text, langue_start, langue_end, ip, date_enrg) 
+                    // VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-   
 
-      $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-        $result = mysqli_query($con, $query);
-        //var_dump($result);
-        $rowcount=mysqli_num_rows($result);
-        $row = mysqli_fetch_array($result);
-        //var_dump($row);
-        //var_dump($rowcount);
-          if($rowcount > 0) {
-          ?>
-         
-          
-          <tr>
-          <td> <?php echo $row['texte2']?> </td>
-          <br>
-          
-            <audio controls>
-              <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-            </audio>
-          <p class="text-sm"><a href="suggestion.php">Soumettre une traduction ?</a></p>
-          <br><br><br>
-          </div>
-          </div>
-          </div>
-          <?php  }else{
-            echo "<p>aucune traduction trouvé </p><br><p class='text-sm'><a href='suggestion.php'>Soumettre une traduction ?</a></p>";
-          }
-           ?>
 
-          <?php    
-      }
-else{
-  echo '';
-}
+                    $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
+                    $result = mysqli_query($con, $query);
+                    //var_dump($result);
+                    $rowcount = mysqli_num_rows($result);
+                    $row = mysqli_fetch_array($result);
+                    //var_dump($row);
+                    //var_dump($rowcount);
+                    if ($rowcount > 0) {
+                ?>
+
+
+                        <tr>
+                            <td> <?php echo $row['texte2'] ?> </td>
+                            <br>
+
+                            <audio controls>
+                                <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+                            </audio>
+                            <p class="text-sm"><a href="suggestion.php">Soumettre une traduction ?</a></p>
+                            <br><br><br>
+            </div>
+        </div>
+    </div>
+
+
+<?php  } else {
+                        echo "<p>aucune traduction trouvé </p><br><p class='text-sm'><a href='suggestion.php'>Soumettre une traduction ?</a></p>";
+                    }
+?>
+
+<?php
+                } else {
+                    echo '';
+                }
 
 
 ?>
-        </div>
-    </div>
-    <!--  -->
+</div>
+</div>
+
+<!--  -->
 
 
 
-    <!-- retrouver nous sur play store -->
-    <div style="text-align:center">
-        <h2 style="color: #828282;">Vous en voulez plus ? Découvrez notre <a href="#">application mobile (iOS et Android)</a><br><br>vous pourrez scanner un document a partitr de votre smartphone et bien plus encore</h2><br><br><a href="https://play.google.com/store"><img src="../public/assets/application-soluchrono-google-play-android - Copie.jpg" height="70px" width="215px"></a><a href="https://www.apple.com/ios/app-store/" style="margin-left: 20px;"><img src="../public/assets/image - Copie.png" height="75px" width="215px"></a>
-    </div><br><br>
+<!-- retrouver nous sur play store -->
+<div style="text-align:center">
+    <h2 style="color: #828282;">Vous en voulez plus ? Découvrez notre <a href="#">application mobile (iOS et Android)</a><br><br>vous pourrez scanner un document a partitr de votre smartphone et bien plus encore</h2><br><br><a href="https://play.google.com/store"><img src="../public/assets/application-soluchrono-google-play-android - Copie.jpg" height="70px" width="215px"></a><a href="https://www.apple.com/ios/app-store/" style="margin-left: 20px;"><img src="../public/assets/image - Copie.png" height="75px" width="215px"></a>
+</div><br><br>
 
 
 
 
-    <!-- BLOC CARACTERISTiQUES PRINCIPALES -->
-    <div style="text-align:center;margin-bottom:20px;">
-        <p>
-            <h2 style="border-bottom: #6c6c6c; border-radius:10px;">CARACTÉRISTIQUES PRINCIPALES</h2>
-            <center>
-                <hr width="40%" color="#007bff">
-            </center>
-            <!-- ma partie commence ici -->
-            <h2 style="margin-top:50px;margin-bottom:50px;color:#555555;letter-spacing: 3px;"><span style="color:rgb(12, 199, 12);">IVOIRE</span><span style="color:rgb(255, 145, 77);">LANGUAGE</span><span style="color:rgb(12, 199, 12);">TRANSLATOR </span>EST UN TRADUCTEUR DE TEXTE<br><br>GRATUIT QUI PREND EN CHARGE TOUT LES NAVIGATEURS<br>MODERNES,
-                Y COMPRIS CHROME FIREFOX ET SAFARI</h2>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="">
-                        <div class="card-body">
-                            <center><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" class="image-ronde" height="70px" width="70px"></center>
-                            <h4 class="card-title" style="margin-top: 20px;">EN LIGNE,
-                                GRATUIT.</h4>
-                            <p class="card-text" style="margin-top:40px;color:#6b6b6b">Pas besoin de payer ou de creer de compte,
-                                Insérer du texte facilement dans la zone de saisi et traduisez vos textes. Simplifier vous la vie avec Ivoire languages Translator.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="">
-                        <div class="card-body">
-                            <center>
-                                <div class="cercle"><img src="../public/assets/cahier.png" height="30px" width="30px" style="margin-top:20px;"></div>
-                            </center>
-                            <h4 class="card-title" style="margin-top: 24px;">LIRE DES FICHIERS PDF,
-                                DES TEXTES</h4>
-                            <p class="card-text" style="color:#6b6b6b">Traduisez facilement des fichiers de type texte,
-                                pdf,
-                                ebook avec Ivoire Languages Translator. il recherche les mots dans vos documents puis les traduits grace a un algorithime performant.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="">
-                        <div class="card-body">
-                            <center>
-                                <div class="cercle"><img src="../public/assets/img.png" class="image-ronde" height="30px" width="30px" style="margin-top:20px;"></div>
-                            </center>
-                            <h4 class="card-title" style="margin-top: 24px;">ACCESSIBLE PARTOUT DANS LE MONDE</h4>
-                            <p class="card-text" style="color:#6b6b6b">Ivoire Languages Translator est accesibles ou que vous soyez. vous visitez la côte d'ivoire ? vous ne comprenez pas la langue locale ?alors ttraduisez avec Ivoire Languages Translator.</p>
-
-                        </div>
+<!-- BLOC CARACTERISTiQUES PRINCIPALES -->
+<div style="text-align:center;margin-bottom:20px;">
+    <p>
+        <h2 style="border-bottom: #6c6c6c; border-radius:10px;">CARACTÉRISTIQUES PRINCIPALES</h2>
+        <center>
+            <hr width="40%" color="#007bff">
+        </center>
+        <!-- ma partie commence ici -->
+        <h2 style="margin-top:50px;margin-bottom:50px;color:#555555;letter-spacing: 3px;"><span style="color:rgb(12, 199, 12);">IVOIRE</span><span style="color:rgb(255, 145, 77);">LANGUAGE</span><span style="color:rgb(12, 199, 12);">TRANSLATOR </span>EST UN TRADUCTEUR DE TEXTE<br><br>GRATUIT QUI PREND EN CHARGE TOUT LES NAVIGATEURS<br>MODERNES,
+            Y COMPRIS CHROME FIREFOX ET SAFARI</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="">
+                    <div class="card-body">
+                        <center><img src="../public/assets/LogoIvoireLanguagesTranslatoweb.png" class="image-ronde" height="70px" width="70px"></center>
+                        <h4 class="card-title" style="margin-top: 20px;">EN LIGNE,
+                            GRATUIT.</h4>
+                        <p class="card-text" style="margin-top:40px;color:#6b6b6b">Pas besoin de payer ou de creer de compte,
+                            Insérer du texte facilement dans la zone de saisi et traduisez vos textes. Simplifier vous la vie avec Ivoire languages Translator.</p>
                     </div>
                 </div>
             </div>
-        </p>
-    </div>
+            <div class="col-sm-4">
+                <div class="">
+                    <div class="card-body">
+                        <center>
+                            <div class="cercle"><img src="../public/assets/cahier.png" height="30px" width="30px" style="margin-top:20px;"></div>
+                        </center>
+                        <h4 class="card-title" style="margin-top: 24px;">LIRE DES FICHIERS PDF,
+                            DES TEXTES</h4>
+                        <p class="card-text" style="color:#6b6b6b">Traduisez facilement des fichiers de type texte,
+                            pdf,
+                            ebook avec Ivoire Languages Translator. il recherche les mots dans vos documents puis les traduits grace a un algorithime performant.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="">
+                    <div class="card-body">
+                        <center>
+                            <div class="cercle"><img src="../public/assets/img.png" class="image-ronde" height="30px" width="30px" style="margin-top:20px;"></div>
+                        </center>
+                        <h4 class="card-title" style="margin-top: 24px;">ACCESSIBLE PARTOUT DANS LE MONDE</h4>
+                        <p class="card-text" style="color:#6b6b6b">Ivoire Languages Translator est accesibles ou que vous soyez. vous visitez la côte d'ivoire ? vous ne comprenez pas la langue locale ?alors ttraduisez avec Ivoire Languages Translator.</p>
 
-    <!-- ligne pour delimiter juste un test-->
-    <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p>
+</div>
 
-    <!-- bloc vert premier traducteur -->
-    <div class="blocvert " style="text-align:center;"><span class="dot" style="color: white;" style="margin-bottom: 15px;"><i class=" fas fa-4x fa-star stars" aria-hidden="true"></i></span>
-        <p class="textblocvert" style="margin-bottom: 35px;margin-top:30px">Premier traducteur de langues locales en côte d'ivoire <br> Construit pour vous facilter la vie .</p>
-        <p class="textblocvert2" style="margin-bottom: 15px;">Vous trouvez qu'il ya un texte mal traduit ? Vous avez des idées pour nous aider à nous ameliorer ? Alors <br> n'hesitez pas envoyer nous un message nous vous répondrons dans les plus brefs délais</p><a href="commentaire.php"><button class="bouttonBlocVert">Envoyez un message </button></a>
-    </div>
+<!-- ligne pour delimiter juste un test-->
+<hr>
 
-    <!-- Visites: $ visites;
+<!-- bloc vert premier traducteur -->
+<div class="blocvert " style="text-align:center;"><span class="dot" style="color: white;" style="margin-bottom: 15px;"><i class=" fas fa-4x fa-star stars" aria-hidden="true"></i></span>
+    <p class="textblocvert" style="margin-bottom: 35px;margin-top:30px">Premier traducteur de langues locales en côte d'ivoire <br> Construit pour vous facilter la vie .</p>
+    <p class="textblocvert2" style="margin-bottom: 15px;">Vous trouvez qu'il ya un texte mal traduit ? Vous avez des idées pour nous aider à nous ameliorer ? Alors <br> n'hesitez pas envoyer nous un message nous vous répondrons dans les plus brefs délais</p><a href="commentaire.php"><button class="bouttonBlocVert">Envoyez un message </button></a>
+</div>
+
+<!-- Visites: $ visites;
     <table class="table table-dark">
         <thead>
             <tr>
@@ -300,11 +443,51 @@ else{
             <tr>
                 <th scope="row"> include('../compteurvisite.php'); ?></th>
             </tr>
-        </tbody> -->
-    </table>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </tbody>
+    </table> -->
+
+<footer>
+    <div class="footer-top">
+        <div class="container bloc2">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-30">
+                    <h3 style="color: #fff;">A propos de nous</h3>
+                    <p style="color:#999;line-height:25px;">Ivoire Languages Translator a été conçu pour faciliter vos discutions avec d'autres communauté.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 segment-two md-mb-30 sm-mb-30">
+                    <h3 style="color: #fff;">Contact</h3>
+                    <ul>
+                        <li><a href="#" style="color: red">SIMPLON COTE D'IVOIRE</a></li>
+                        <li><a href="#">no_reply@simplonline.co</a></li>
+                        <li><a href="#">00-00-00-00</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 segment-three sm-mb-30">
+                    <h3 style="color: #fff;">Suivez-nous</h3>
+                    <p>Réjoingnez nous sur google play & app storeger</p>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 box segment-four sm-mb-30">
+                    <!- <strong>
+                        <h3 style="color: #fff;">Conidentalité et condition du site</h3></strong>
+                        <p style="color:#999; line-height:25px;">Voir notre page <a href="#">Conidentalité et condition du site</a></p>
+                        <p style="color:#999; line-height:25px;">Donnez vos avis à propos du site</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="footer-bottom-text" style="color:#999; line-height:25px;">copyright &copy; - 2020</p>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

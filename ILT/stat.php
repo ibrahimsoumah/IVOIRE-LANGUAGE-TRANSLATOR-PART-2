@@ -31,15 +31,45 @@ $count = trim($count, ",");
 
     <style>
 
+.body2 {
+    background-color: lightgrey;
+}
+.chart {
+    background-color: rgb(86, 162, 54);
+
+}
+.titre {
+    text-align: center;
+}
+</style>
+    <style>
+
+        .body2 {
+            background-color: lightgrey;
+        }
+        .chart {
+            background-color: rgb(86, 162, 54);
+            
+        }
+        .titre {
+            text-align: center;
+        }
     </style>
 </head>
 
-<body>
+<body class="body2">
+    <h1><a href="dbd.php">ACCEUIL</a></h1>
 
     <div class="container">
-        <h3>Graph des mots et expressions recherché(e)s sur le site</h3>
-
-        <canvas id="chart" style="width: 100%; height: 60%; background:#FFF; border: 1px solid #555652; margin-top: 10px;"></canvas>
+        <h3 class="titre">Graph des mots et expressions recherché(e)s sur le site</h3>
+<hr>
+    
+    
+  <h1> <a href="dbd.php"> ACCEUIL </a> </h1>
+    <div class="container">
+        <h3 class="titre">Graph des mots et expressions recherché(e)s sur le site</h3>
+    <hr>
+        <canvas class="chart" id="chart" style="width: 200px; height: 40px; border: 2px solid #000000; margin-top: 10px;"></canvas>
 
         <script>
             var ctx = document.getElementById("chart").getContext("2d");
@@ -51,7 +81,7 @@ $count = trim($count, ",");
                             label: 'search',
                             data: [<?php echo $search; ?>],
                             backgroundColor: 'transparent',
-                            borderColor: 'rgba (255,99,132) ',
+                            borderColor: 'rgba (0, 0, 0) ',
                             borderWidth: 3
                         },
 
@@ -59,7 +89,7 @@ $count = trim($count, ",");
                             label: 'count',
                             data: [<?php echo $count; ?>],
                             backgroundColor: 'transparent',
-                            borderColor: 'rgba (0,255,255) ',
+                            borderColor: 'rgba (0, 0, 0) ',
                             borderWidth: 3
                         }
                     ]
@@ -84,7 +114,7 @@ $count = trim($count, ",");
                         display: true,
                         position: 'top',
                         labels: {
-                            fontColor: 'rgb (255,255,255)',
+                            fontColor: 'rgb (0, 0, 0)',
                             fontSize: 16
                         }
                     }

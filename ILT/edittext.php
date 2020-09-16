@@ -31,7 +31,7 @@ if (isset($_POST['Modifier'])) {
   // $target_file = $_POST['audio'];
   $date = date("Y-m-d h:i:s");
 
-  $target_dir = "daudios/";
+  $target_dir = "public/daudios/";
   $target_file = $target_dir . basename($_FILES["audio"]["name"]);
 
 
